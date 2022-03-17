@@ -1,0 +1,95 @@
+#服务配置
+server :
+  host : 192.168.12.177
+  port : 90
+#mysql配置
+mysql :
+  userName : root
+  password : root
+  url : 192.168.16.168
+  port : 3306
+  loc : Asia/Shanghai
+  databaseName : fms
+  charSet : utf8
+  driverName : mysql
+#redis配置
+redis :
+  host :  192.168.16.168:6380
+  network : tcp
+#监控应用状态
+instances: ["taojin-account-web-launcher.default:50120/budo-graph/healthz",
+            "taojin-agenda-web-launcher.default:50430/agenda/budo-graph/healthz",
+            "taojin-buran-web-launcher.default:50960/buran/budo-graph/healthz",
+            "taojin-caas-openapi-launcher.default:50930/taojin-caas-openapi-launcher/budo-graph/healthz",
+            "taojin-caas-web-launcher.default:50940/caas/budo-graph/healthz",
+            "taojin-call-web-launcher.default:50340/callweb/budo-graph/healthz",
+            "taojin-chat-record-web-launcher.default:50890/chat-record/budo-graph/healthz",
+            "taojin-cms-web-launcher.default:50450/cms/budo-graph/healthz",
+            "taojin-electricity-bootstrap.default:51020/api/budo-graph/healthz",
+            "taojin-electricity-scheduled.default:51010/api/budo-graph/healthz",
+            "taojin-finance-web-launcher.default:50060/budo-graph/healthz",
+            "taojin-forewarn-web-launcher.default:50460/forewarn/budo-graph/healthz",
+            "taojin-form-web-launcher.default:50470/form/budo-graph/healthz",
+            "taojin-freeswitch-web-launcher.default:50130/freeswitch/budo-graph/healthz",
+            "taojin-gundam-web-launcher.default:50480/gundam/budo-graph/healthz",
+            "taojin-hawkeye-web-launcher.default:50490/hawkeye/budo-graph/healthz",
+            "taojin-live-data.default:50990/live/budo-graph/healthz",
+            "taojin-live-video.default:50991/livevideo/budo-graph/healthz",
+            "taojin-market-web.default:50500/api/budo-graph/healthz",
+            "taojin-marking-web-launcher.testing:50070/marking/budo-graph/healthz",
+            "taojin-merchant-web-launcher.default:30580/merchant/budo-graph/healthz",
+            "taojin-onlineexercise-web.default:50510/taojin-onlineexercise-web/budo-graph/healthz",
+            "taojin-order-web-launcher.default:50160/order/budo-graph/healthz",
+            "taojin-portal-web-launcher.default:50030/budo-graph/healthz",
+            "taojin-provider-web-launcher.default:50250/provider/budo-graph/healthz",
+            "taojin-recruit-bootstrap.default:51050/recruit/budo-graph/healthz",
+            "taojin-report-web-launcher.default:50520/report/budo-graph/healthz",
+            "taojin-talk-web-launcher.default:50530/talk/budo-graph/healthz",
+            "taojin-tax-service-launcher.testing:50090/budo-graph/healthz",
+            "taojin-tax-service-merchant-launcher.testing:50110/api/budo-graph/healthz",
+            "taojin-tax-service-restful-launcher.testing:50100/rest/budo-graph/healthz",
+            "taojin-tax-service-web-launcher.testing:50080/system/budo-graph/healthz",
+            "taojin-ticket-web-launcher.default:50010/ticket/budo-graph/healthz",
+            "taojin-v-office-web.default:50540/taojin-v-office-web/budo-graph/healthz",
+            "taojin-wecom-web-launcher.default:50970/wecom/budo-graph/healthz",
+            "tj-ai-data-service.default:50550/budo-graph/healthz",
+            "tj-ai-general-service.default:50560/budo-graph/healthz",
+            "tj-ai-input-manage-service.testing:50570/budo-graph/healthz",
+            "tj-ai-input-manage.default:50570/budo-graph/healthz",
+            "tj-ai-qa-service.default:50580/budo-graph/healthz",
+            "tj-call-connector-web.default:50700/tj-call-connector-web/budo-graph/healthz",
+            "tj-call-core-web.default:50330/tj-call-core-web/budo-graph/healthz",
+            "tj-call-monitor-web.default:50350/tj-call-monitor-web/budo-graph/healthz",
+            "tj-call-partner-web.default:50360/tj-call-partner-web/budo-graph/healthz",
+            "tj-college-web.default:50180/tj-college-web/budo-graph/healthz",
+            "tj-dw-web.default:50620/tj-dw-web/budo-graph/healthz",
+            "tj-hawkeye-server-web.default:50900/tj-hawkeye-server-web/budo-graph/healthz",
+            "tj-im-customer-web.default:50660/budo-graph/healthz",
+            "tj-im-manager.default:57140/imManager/budo-graph/healthz",
+            "tj-im-service.default:50670/tj-im-service/budo-graph/healthz",
+            "tj-im-web.default:50680/weixin/budo-graph/healthz",
+            "tj-job-task-launcher.default:50050/tj-job-task-web/budo-graph/healthz",
+            "tj-job-web.default:50280/tj-job-web/budo-graph/healthz",
+            "tj-merchant-web.default:50150/tj-merchant-web/budo-graph/healthz",
+            "tj-message-web.default:50290/tj-message-web/budo-graph/healthz",
+            "tj-ocr-tess.default:50710/budo-graph/healthz",
+            "tj-openapi-web.default:50720/tj-openapi-web/budo-graph/healthz",
+            "tj-operation-launcher.default:50730/tj-operation-web/budo-graph/healthz",
+            "tj-order-web.default:50170/tj-order-web/budo-graph/healthz",
+            "tj-pay-service.default:50040/tj-pay-service/budo-graph/healthz",
+            "tj-quality-control-web.default:50260/qc/budo-graph/healthz",
+            "tj-schedule-web.default:50990/tj-schedule-web/budo-graph/healthz",
+            "tj-study-exam-center-web.default:50740/tj-study-exam-center-web/budo-graph/healthz",
+            "tj-team-talk-web.default:50190/teamtalk/budo-graph/healthz",
+            "tj-tjk-achievement-web.default:50760/tj-tjk-achievement-web/budo-graph/healthz",
+            "tj-tjk-info-web.default:50310/tj-tjk-info-web/budo-graph/healthz",
+            "tj-upload-web.default:50200/budo-graph/healthz",
+            "tj-user-web.default:50300/tj-user-web/budo-graph/healthz",
+            "tj-wsdc-connector-web.default:50270/tj-wsdc-connector-web/budo-graph/healthz",
+            "tj-xlive-h5.default:51001/api/budo-graph/healthz",
+            "tj-xlive-system.default:51000/api/budo-graph/healthz",
+            "tjk-crowdsource-module-service.default:50240/budo-graph/healthz",
+            "tjk-crowdsource-web-launcher.default:50230/budo-graph/healthz",
+            "tjk-customer-web.default:50210/customer/budo-graph/healthz",
+            "tjk-merchant-web.default:50320/merchant/budo-graph/healthz",
+            "tjk-systemmanagement-web.default:50220/system/budo-graph/healthz"]
