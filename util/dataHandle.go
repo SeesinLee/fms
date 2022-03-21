@@ -102,7 +102,7 @@ func HandleDuration(a map[moddle.Time]int)[]float64{
 		if b[v] == g {
 			continue
 		}
-		vl,_:=strconv.ParseFloat(fmt.Sprintf("%.2f",float64(b[v].Value/b[v].Denominator/60)),64)
+		vl,_:=strconv.ParseFloat(fmt.Sprintf("%.2f",float64(b[v].Value)/float64(b[v].Denominator)),64)
 		f = append(f,vl)
 	}
 	return f

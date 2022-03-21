@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"net/url"
 )
@@ -33,6 +34,7 @@ func MysqlInit()*gorm.DB{	//初始化mysql
 		url.QueryEscape(loc))
 	DB,err = gorm.Open(driverName,n)
 	if err != nil {
+		logrus.Error(err)
 		panic(err)
 	}
 	return DB

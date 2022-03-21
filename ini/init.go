@@ -2,6 +2,7 @@ package ini
 
 import (
 	"fms/database"
+	"fms/errorLog"
 	"fms/prometheusAPI"
 	"fms/router"
 	"fms/util"
@@ -9,6 +10,7 @@ import (
 )
 
 func Init (){
+	errorLog.InitErrorLog() //初始化错误日志
 	initViper()	//初始化viper
 	database.MysqlInit()
 	database.CreatTable()

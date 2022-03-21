@@ -6,6 +6,7 @@ import (
 	"fms/f3CallingRequest"
 	"fms/moddle"
 	"fmt"
+	"github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
 	"strconv"
@@ -63,7 +64,7 @@ func (si *AppStatusMg)CurlApp(url string){  //curlPrometheus的应用状态接�
 	si.Url = url
 			rep,err := http.Get(url)
 			if err != nil {
-				fmt.Println(err)
+				logrus.Error(err)
 				NumCounts.Done()
 				return
 			}
@@ -74,11 +75,13 @@ func (si *AppStatusMg)CurlApp(url string){  //curlPrometheus的应用状态接�
 				return
 			}
 			if err != nil {
+				logrus.Error(err)
 				NumCounts.Done()
 				return
 			}
 			err = json.Unmarshal(body, &pm)
 			if err != nil {
+				logrus.Error(err)
 				NumCounts.Done()
 				return
 			}
