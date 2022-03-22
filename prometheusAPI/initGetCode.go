@@ -30,7 +30,7 @@ func InitGetCode() {
 			go StartCurlApp()
 			go F3CallingRating()
 			WG.Wait()
-			time.Sleep(time.Second * 20 )
+			time.Sleep(time.Second * 30 )
 		}
 	}()
 

@@ -119,7 +119,7 @@ func (si *AppStatusMg)WhenError()bool { //出现应用宕机情况后等待应�
 	)
 	ONE:
 	for i = 0; i < 5; i++ {
-		time.Sleep(time.Second * 5)
+		time.Sleep(time.Second * 30)
 		rep,err = http.Get(si.Url)
 		if err != nil {
 			fmt.Println(err)
