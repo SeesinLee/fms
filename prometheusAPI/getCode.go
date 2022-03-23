@@ -9,6 +9,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
+	"reflect"
 	"strconv"
 	"sync"
 	"time"
@@ -70,7 +71,7 @@ func (si *AppStatusMg)CurlApp(url string){  //curlPrometheus的应用状态接�
 			}
 			defer rep.Body.Close()
 			body, err := ioutil.ReadAll(rep.Body)
-			if len(body) == 0 {
+			if reflect.ValueOf(body).Len() == 0 {
 				NumCounts.Done()
 				return
 			}
