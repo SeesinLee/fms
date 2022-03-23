@@ -58,6 +58,7 @@ func (gm *GroupMe)Create()gin.HandlerFunc{return func(c *gin.Context) {
 		y := &moddle.GroupMember{
 			Username: u.Username,
 			GroupID: b.ID,
+			AdmUsername: u.Username,
 		}
 		j := new(moddle.GroupMember)
 		db.Model(moddle.GroupMember{}).Where("username=?",y.Username).First(&j)
