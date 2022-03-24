@@ -19,6 +19,7 @@ func InitRouter(){
 	r.POST("/logout",user.Logout())
 	r.Use(midware.UserAuthor(),midware.CheckBlackList())
 	r.GET("/info",user.Info())
+	r.POST("/password",user.InitPassword().Edit())
 	Group := r.Group("/group")
 	Group.Use(midware.AdminAuthor())
 	Group.POST("/create",midware.AdminAuthor(),user.NewGroup().Create())

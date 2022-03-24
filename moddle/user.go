@@ -55,3 +55,10 @@ type GroupMember struct {	//添加用户到群组的对象
 func (GM *GroupMember) BeforeCreate(scope *gorm.Scope) error {
 	return scope.SetColumn("ID", uuid.NewV4())
 }
+
+type EditPassword struct {
+	Username string	`json:"username"`
+	OldPassword string	`json:"oldPassword"`
+	NewPassword string	`json:"newPassword"`
+	CorrectPassword string	`json:"correctPassword"`
+}
