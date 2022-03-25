@@ -1,20 +1,20 @@
 #服务配置
 server :
-  host : 192.168.12.177
+  host :
   port : 90
 #mysql配置
 mysql :
   userName : root
   password : root
-  url : 192.168.16.168
-  port : 3306
+  url : 192.168.14.113
+  port : 3307
   loc : Asia/Shanghai
   databaseName : fms
   charSet : utf8
   driverName : mysql
 #redis配置
 redis :
-  host :  192.168.16.168:6380
+  host :  192.168.14.113:6380
   network : tcp
 #监控应用状态
 instances: ["taojin-account-web-launcher.default:50120/budo-graph/healthz",
